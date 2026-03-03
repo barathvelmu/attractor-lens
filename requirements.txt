@@ -1,0 +1,6 @@
+ollama
+sentence-transformers
+scikit-learn
+numpy
+plotly>=6.1.1
+kaleido

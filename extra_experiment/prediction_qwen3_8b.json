@@ -1,0 +1,13 @@
+{
+  "model": "qwen3:8b",
+  "n_prompts": 30,
+  "n_clusters": 3,
+  "accuracy": 0.36666666666666664,
+  "std": 0.06666666666666668,
+  "random_baseline": 0.3333333333333333,
+  "cluster_distribution": [
+    8,
+    13,
+    9
+  ]
+}

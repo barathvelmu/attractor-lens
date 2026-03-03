@@ -1,0 +1,13 @@
+{
+  "model": "gemma3:12b",
+  "n_prompts": 30,
+  "n_clusters": 3,
+  "accuracy": 0.4333333333333333,
+  "std": 0.08164965809277261,
+  "random_baseline": 0.3333333333333333,
+  "cluster_distribution": [
+    13,
+    6,
+    11
+  ]
+}

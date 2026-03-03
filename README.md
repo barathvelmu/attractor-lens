@@ -1,18 +1,21 @@
 # AttractorLens
 
 When you leave AI models talking to themselves in a loop with no
-instructions, they converge to the same weird recurring themes.
-Every time. This tool maps that.
+instructions, they converge to the same weird recurring themes. 
+
+This tool maps this.
 
 Motivated by Neel Nanda (Google DeepMind) noting this as an open
 area for investigation, and prior work from ICLR 2025 and ACL 2025
-documenting the phenomenon — without shipping any reusable tooling.
+documenting the phenomenon; without shipping any reusable tooling.
 
 ## Why This Exists
 
 Every paper on attractor states built a one-off experiment and moved on.
 AttractorLens is the reusable tool that was missing.
-Clone it. Pull any model. Get results in 10 minutes.
+
+
+Feel free to clone it, pull any model, and get results.
 
 ## What It Does
 
@@ -67,8 +70,8 @@ This runs the full experiment end-to-end:
 1. **Comparison** — all 4 models on the same prompt (reuses existing data if available)
 2. **Prediction** — 30 prompts × 4 models, tests if starting prompt predicts attractor
 
-The prediction step takes ~2-3 hours per model (~8-12 hours total for all 4).
-Results save incrementally — safe to interrupt and resume.
+The prediction step takes ~2-3 hours per model (~6-12 hours total for all 4).
+Results save incrementally, so it's safe to interrupt and resume.
 
 ## Running Individual Pieces
 
@@ -111,7 +114,7 @@ Same starting prompt. Four models. Four different attractors.
 
 **Sample results** (from `results/` in this repo): The comparison chart shows each model’s trajectory (50 turns, same prompt) drifting to a different region in 2D — attractors are model-specific. Prediction accuracy (30 prompts, 3 clusters; random baseline 33%): Qwen3 8B 60%, Llama 3.1 8B 57%, Mistral Nemo 12B 50%, Gemma3 12B 43%. All above chance, so the starting prompt influences where the run lands.
 
-**A note on the prediction runs:** The prediction experiment uses 20 turns per prompt (vs 50 for comparison) to keep runtime under 3 hours per model. Qwen3 hits the convergence threshold within 20 turns for 20/30 prompts — those are genuine attractor predictions. Llama, Mistral, and Gemma need more than 20 turns to converge (the 50-turn comparison runs confirm they do); for those models the prediction experiment clusters 20-turn endpoints rather than detected attractors. Above-chance accuracy still holds for all 4 models, meaning the starting prompt influences trajectory well before convergence — but extending to 40+ turns per prompt would make the prediction experiment fully rigorous for all models. That’s a natural next step for anyone with more compute.
+**A note on the prediction runs:** The prediction experiment uses 20 turns per prompt (vs 50 for comparison) to keep runtime under 3 hours per model. Qwen3 hits the convergence threshold within 20 turns for 20/30 prompts — those are genuine attractor predictions. Llama, Mistral, and Gemma need more than 20 turns to converge (the 50-turn comparison runs confirm they do); for those models the prediction experiment clusters 20-turn endpoints rather than detected attractors. Above-chance accuracy still holds for all 4 models, meaning the starting prompt influences trajectory well before convergence. However, extending to 40+ turns per prompt would make the prediction experiment fully rigorous for all models. That’s a natural next step for anyone with more compute.
 
 Check `results/` after a run:
 - `comparison.html` — interactive multi-model trajectory chart
@@ -140,7 +143,7 @@ ollama list   # verify empty
 
 ## extra_experiment/
 
-The `extra_experiment/` folder holds a partial run that added **Qwen3.5 9B** to the pipeline (loop + comparison). We hit compute limits before finishing prediction for that model, so the main tool ships with the 4 models above. The data and structure are there if you want to continue: add `qwen3.5:9b` to `MODELS` in `compare.py`, pull the model, and run. Feel free to pick it up.
+The `extra_experiment/` folder holds a partial run that added **Qwen3.5 9B** to the pipeline (loop + comparison). I hit compute limits before finishing prediction for that model, so the main tool ships with the 4 models above. The data and structure are there if you want to continue: add `qwen3.5:9b` to `MODELS` in `compare.py`, pull the model, and run. Feel free to pick it up.
 
 ## References
 

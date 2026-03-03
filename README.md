@@ -20,7 +20,7 @@ Clone it. Pull any model. Get results in 10 minutes.
 - Detects convergence via sustained cosine similarity (3 consecutive windows above 0.85)
 - Visualizes the semantic drift trajectory in 2D
 - Compares attractor states across models on the same prompt
-- Predicts which attractor a starting prompt will trigger (all 4 models)
+- Predicts which semantic region a starting prompt will reach (all 4 models)
 
 ## Supported Models (out of the box)
 
@@ -110,6 +110,8 @@ Any model on [ollama.com](https://ollama.com) works.
 Same starting prompt. Four models. Four different attractors.
 
 **Sample results** (from `results/` in this repo): The comparison chart shows each model’s trajectory (50 turns, same prompt) drifting to a different region in 2D — attractors are model-specific. Prediction accuracy (30 prompts, 3 clusters; random baseline 33%): Qwen3 8B 60%, Llama 3.1 8B 57%, Mistral Nemo 12B 50%, Gemma3 12B 43%. All above chance, so the starting prompt influences where the run lands.
+
+**A note on the prediction runs:** The prediction experiment uses 20 turns per prompt (vs 50 for comparison) to keep runtime under 3 hours per model. Qwen3 hits the convergence threshold within 20 turns for 20/30 prompts — those are genuine attractor predictions. Llama, Mistral, and Gemma need more than 20 turns to converge (the 50-turn comparison runs confirm they do); for those models the prediction experiment clusters 20-turn endpoints rather than detected attractors. Above-chance accuracy still holds for all 4 models, meaning the starting prompt influences trajectory well before convergence — but extending to 40+ turns per prompt would make the prediction experiment fully rigorous for all models. That’s a natural next step for anyone with more compute.
 
 Check `results/` after a run:
 - `comparison.html` — interactive multi-model trajectory chart

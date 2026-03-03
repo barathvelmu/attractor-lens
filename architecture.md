@@ -62,12 +62,14 @@ Starting prompt: "talk about anything you find interesting"
          │
          ▼
     ┌──────────┐
-    │ detect.py│  Find where each prompt converges
+    │ detect.py│  Find convergence turn (threshold=0.85, sustained=3)
+    │          │  Fallback: last turn if threshold never reached
     └────┬─────┘
-         │  30 attractor endpoints per model
+         │  30 endpoint embeddings per model
+         │  (convergence turn if detected, turn 20 otherwise)
          ▼
     ┌───────────┐
-    │predict.py │  KMeans → 3 attractor clusters
+    │predict.py │  KMeans → 3 endpoint clusters
     │           │  LogisticRegression on starting prompt embeddings
     │           │  Cross-validate: can prompt predict cluster?
     └───────────┘
@@ -75,6 +77,12 @@ Starting prompt: "talk about anything you find interesting"
          ▼
     Accuracy vs. 33% random baseline
     If above chance → prompts could be screened before deployment
+
+    Note: In the runs here, Qwen3 hits the convergence threshold within
+    20 turns for 20/30 prompts. Llama, Mistral, and Gemma do not reach
+    the threshold within 20 turns (0/30) — their clusters are of
+    20-turn endpoints, not detected attractors. The 50-turn comparison
+    runs confirm all 4 models converge with more turns.
 ```
 
 ## Key Design Decisions

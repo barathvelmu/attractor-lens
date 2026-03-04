@@ -1,5 +1,7 @@
 # AttractorLens
 
+### [Technical Blog](https://open.substack.com/pub/barathvelmu/p/reusable-tooling-for-llm-self-loop?utm_campaign=post-expanded-share&utm_medium=web)
+
 When you leave AI models talking to themselves in a loop with no
 instructions, they converge to the same weird recurring themes. 
 

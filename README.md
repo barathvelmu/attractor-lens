@@ -149,8 +149,8 @@ The `extra_experiment/` folder holds a partial run that added **Qwen3.5 9B** to 
 
 ## References
 
-- Neel Nanda, MIT Maya Speaker Series (2025)
-- "When LLMs Play the Telephone Game" — ICLR 2025
-- "Unveiling Attractor Cycles in LLMs" — ACL 2025
-- Anthropic Claude Opus 4 System Card (2025) — spiritual bliss attractor
-- Mapping LLM Attractor States — LessWrong (2025)
+- Neel Nanda, MIT Talk (2026)
+- When LLMs Play the Telephone Game: Cumulative Changes and Attractors in Iterated Cultural Transmissions — ICLR 2025 poster  
+- Unveiling Attractor Cycles in Large Language Models — ACL 2025 
+- Anthropic Claude Opus 4 & Sonnet 4 System Card — 2025 (notes the “spiritual bliss attractor” observed in recursive Claude behaviors)  
+- Mapping LLM Attractor States — LessWrong (Feb 2026)

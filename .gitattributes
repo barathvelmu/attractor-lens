@@ -1,1 +1,2 @@
-results/ linguist-generated
+results/ linguist-vendored
+extra_experiment/ linguist-vendored

@@ -5,3 +5,4 @@ __pycache__/
 *.egg-info/
 venv/
 attractor_manifesto_FINAL.md
+session_transcript.md

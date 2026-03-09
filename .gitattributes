@@ -1,2 +1,2 @@
-results/ linguist-vendored
-extra_experiment/ linguist-vendored
+results/** linguist-vendored
+extra_experiment/** linguist-vendored

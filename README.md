@@ -72,7 +72,7 @@ This runs the full experiment end-to-end:
 1. **Comparison** — all 4 models on the same prompt (reuses existing data if available)
 2. **Prediction** — 30 prompts × 4 models, tests if starting prompt predicts attractor
 
-The prediction step takes ~2-3 hours per model (~6-12 hours total for all 4).
+The prediction step takes ~2-3 hours per model (~8-12 hours total for all 4).
 Results save incrementally, so it's safe to interrupt and resume.
 
 ## Running Individual Pieces

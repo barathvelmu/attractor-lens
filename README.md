@@ -29,7 +29,7 @@ So the pull is real, but it is not total: where you start still tugs on where yo
 The whole tool is nothing but a loop, a ruler, and a map:
 
 1. **Loop** (`loop.py`): two instances of the same model converse with no system prompt, seeded by one opening line.
-2. **Detect** (`detect.py`): every turn is embedded; convergence is declared after 3 consecutive windows of cosine similarity above 0.85. Not vibes, a number.
+2. **Detect** (`detect.py`): every turn is embedded; convergence is declared after 3 consecutive windows of cosine similarity above 0.85, so settling is a measured event rather than a judgment call.
 3. **Visualize** (`visualize.py`): the embedding trajectory is projected to 2D so drift and settling are visible.
 4. **Compare & predict** (`compare.py`, `predict.py`): run many models on one prompt, or many prompts on one model, and test whether the start predicts the end.
 
